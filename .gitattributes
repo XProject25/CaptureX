@@ -1,0 +1,7 @@
+# Normalize line endings
+* text=auto eol=lf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.crx binary

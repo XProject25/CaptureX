@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "CaptureX",
+  "version": "1.0.0",
+  "description": "Capture the entire scrollable web page as one high-resolution image and download it as JPG.",
+  "author": "XProject25",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "CaptureX - Capture full page",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

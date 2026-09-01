@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CaptureX</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="brand">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cxBadge" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#7C3AED" />
+              <stop offset="0.55" stop-color="#5B21B6" />
+              <stop offset="1" stop-color="#4338CA" />
+            </linearGradient>
+            <linearGradient id="cxX" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FFFFFF" />
+              <stop offset="1" stop-color="#C7D2FE" />
+            </linearGradient>
+          </defs>
+          <rect x="16" y="16" width="480" height="480" rx="120" fill="url(#cxBadge)" />
+          <g fill="none" stroke="#EEF2FF" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
+            <path d="M120 168 V120 H168" />
+            <path d="M344 120 H392 V168" />
+            <path d="M392 344 V392 H344" />
+            <path d="M168 392 H120 V344" />
+          </g>
+          <circle cx="256" cy="256" r="120" fill="none" stroke="#FFFFFF" stroke-width="10" opacity="0.16" />
+          <g stroke="url(#cxX)" stroke-width="54" stroke-linecap="round">
+            <line x1="188" y1="188" x2="324" y2="324" />
+            <line x1="324" y1="188" x2="188" y2="324" />
+          </g>
+        </svg>
+      </span>
+      <span class="brand__name">Capture<span class="brand__accent">X</span></span>
+    </header>
+
+    <main>
+      <button id="captureBtn" class="primary" type="button">
+        <svg class="primary__icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 8V6a2 2 0 0 1 2-2h2" />
+          <path d="M16 4h2a2 2 0 0 1 2 2v2" />
+          <path d="M20 16v2a2 2 0 0 1-2 2h-2" />
+          <path d="M8 20H6a2 2 0 0 1-2-2v-2" />
+          <circle cx="12" cy="12" r="3.2" />
+        </svg>
+        <span class="primary__label">Capture full page</span>
+      </button>
+
+      <div class="options">
+        <label class="switch">
+          <input type="checkbox" id="fullPage" checked />
+          <span class="switch__track"><span class="switch__thumb"></span></span>
+          <span class="switch__text">Full page (scroll and stitch)</span>
+        </label>
+
+        <div class="field">
+          <div class="field__row">
+            <span class="field__label">Format</span>
+            <div class="segmented" role="group" aria-label="Image format">
+              <button type="button" class="segmented__btn is-active" data-format="jpeg">JPG</button>
+              <button type="button" class="segmented__btn" data-format="png">PNG</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="field" id="qualityField">
+          <div class="field__row">
+            <span class="field__label">JPG quality</span>
+            <span class="field__value" id="qualityValue">92%</span>
+          </div>
+          <input type="range" id="quality" min="50" max="100" value="92" step="1" />
+        </div>
+      </div>
+
+      <div class="status" id="status" hidden>
+        <div class="progress"><span class="progress__bar" id="progressBar"></span></div>
+        <p class="status__text" id="statusText">Preparing...</p>
+      </div>
+
+      <div class="result" id="result" hidden>
+        <div class="result__preview"><img id="resultThumb" alt="Captured page preview" /></div>
+        <div class="result__meta">
+          <p class="result__saved">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" /></svg>
+            Saved to your Downloads
+          </p>
+          <p class="result__file" id="resultFile"></p>
+          <p class="result__dims" id="resultDims"></p>
+        </div>
+      </div>
+
+      <div class="error" id="error" hidden>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 8v5" /><path d="M12 16h.01" /></svg>
+        <span id="errorText"></span>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <span>CaptureX v1.0.0</span>
+      <span class="foot__by">by XProject25</span>
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

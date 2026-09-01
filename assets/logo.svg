@@ -1,0 +1,34 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="CaptureX">
+  <defs>
+    <linearGradient id="cxBadge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7C3AED" />
+      <stop offset="0.55" stop-color="#5B21B6" />
+      <stop offset="1" stop-color="#4338CA" />
+    </linearGradient>
+    <linearGradient id="cxX" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" />
+      <stop offset="1" stop-color="#C7D2FE" />
+    </linearGradient>
+    <linearGradient id="cxSheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.18" />
+      <stop offset="0.5" stop-color="#FFFFFF" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <rect x="16" y="16" width="480" height="480" rx="120" fill="url(#cxBadge)" />
+  <rect x="16" y="16" width="480" height="480" rx="120" fill="url(#cxSheen)" />
+
+  <g fill="none" stroke="#EEF2FF" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" opacity="0.92">
+    <path d="M120 168 V120 H168" />
+    <path d="M344 120 H392 V168" />
+    <path d="M392 344 V392 H344" />
+    <path d="M168 392 H120 V344" />
+  </g>
+
+  <circle cx="256" cy="256" r="120" fill="none" stroke="#FFFFFF" stroke-width="10" opacity="0.16" />
+
+  <g stroke="url(#cxX)" stroke-width="54" stroke-linecap="round">
+    <line x1="188" y1="188" x2="324" y2="324" />
+    <line x1="324" y1="188" x2="188" y2="324" />
+  </g>
+</svg>
